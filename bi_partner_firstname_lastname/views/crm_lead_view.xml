@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="bi_inherit_lead_view" model="ir.ui.view">
+            <field name="name">bi_inherit_lead_view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
