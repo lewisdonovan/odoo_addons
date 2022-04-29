@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Tree view for the menuitem -->
+        <record id="izi_analysis_tree" model="ir.ui.view">
+            <field name="name">izi.analysis.tree</field>
+            <field name="model">izi.analysis</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="table_id"/>
+                    <field name="source_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view for the menuitem -->
+        <record id="izi_data.izi_analysis_form" model="ir.ui.view">
+            <field name="name">izi.analysis.form</field>
+            <field name="model">izi.analysis</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Get Data Analysis" class="oe_highlight" name="get_analysis_datas" type="object" context="{'test_analysis': True}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="source_id"/>
+                                <field name="table_id" domain="[('source_id', '=', source_id)]"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Metrics">
+                                <field name="metric_ids">
+                                    <tree editable="top">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="table_id" invisible="1"/>
+                                        <field name="field_id" domain="[('table_id', '=', table_id)]"/>
+                                        <field name="field_type" readonly="1"/>
+                                        <field name="calculation"/>
+                                        <field name="sort"/>
+                                        <field name="name_alias"/>
+
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Dimensions">
+                                <field name="dimension_ids">
+                                    <tree editable="top">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="table_id" invisible="1"/>
+                                        <field name="field_id" domain="[('table_id', '=', table_id)]"/>
+                                        <field name="field_type" readonly="1"/>
+                                        <field name="field_format" attrs="{'readonly': [('field_type', 'not in', ['date', 'datetime'])]}"/>
+                                        <field name="sort"/>
+                                        <field name="name_alias"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

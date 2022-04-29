@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"izi_data.access_izi_data_source_crud_group_user","IZI Data Source Access for Group User: CRUD","izi_data.model_izi_data_source",,1,1,1,1
+"izi_data.access_izi_table_crud_group_user","IZI Table Access for Group User: CRUD","izi_data.model_izi_table",,1,1,1,1
+"izi_data.access_izi_table_field_crud_group_user","IZI Table Field Access for Group User: CRUD","izi_data.model_izi_table_field",,1,1,1,1
+"izi_data.access_izi_table_field_mapping_crud_group_user","IZI Table Field Mapping Access for Group User: CRUD","izi_data.model_izi_table_field_mapping",,1,1,1,1
+"izi_data.access_izi_analysis_crud_group_user","IZI Analysis Access for Group User: CRUD","izi_data.model_izi_analysis",,1,1,1,1
+"izi_data.access_izi_analysis_metric_crud_group_user","IZI Analysis Metric Access for Group User: CRUD","izi_data.model_izi_analysis_metric",,1,1,1,1
+"izi_data.access_izi_analysis_dimension_crud_group_user","IZI Analysis Dimension Access for Group User: CRUD","izi_data.model_izi_analysis_dimension",,1,1,1,1
+"izi_data.access_izi_analysis_filter_crud_group_user","IZI Analysis Filter Access for Group User: CRUD","izi_data.model_izi_analysis_filter",,1,1,1,1

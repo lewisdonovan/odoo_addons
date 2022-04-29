@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Tree view for the menuitem -->
+        <record id="izi_table_tree" model="ir.ui.view">
+            <field name="name">izi.table.tree</field>
+            <field name="model">izi.table</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="source_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view for the menuitem -->
+        <record id="izi_table_form" model="ir.ui.view">
+            <field name="name">izi.table.form</field>
+            <field name="model">izi.table</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Get Table Data" class="oe_highlight" name="get_table_datas" type="object" context="{'test_query': True}"/>
+                        <button string="Get Table Fields" class="" name="get_table_fields" type="object"/>
+                        <button string="Insert Stored Table" class="" name="update_schema" type="object"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="source_id"/>
+                                <field name="is_stored" attrs="{'invisible': [('db_query', '=', False)]}"/>
+                                <field name="cron_id" string="Scheduller" readonly="1" attrs="{'invisible': [('db_query', '=', False)]}"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Fields">
+                                <field name="field_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="field_name"/>
+                                        <field name="field_type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Query">
+                                <field name="db_query" widget="ace" options="{'mode':'python'}"/>
+                            </page>
+                            <page string="Analysis">
+                                <field name="analysis_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

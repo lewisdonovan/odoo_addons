@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Form -->
+    <record id="view_quotation_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.attach.icon.quotation</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="message_attachment_count" invisible="1"/>
+                <button name="button_dummy" type="object" string="" attrs="{'invisible':[('message_attachment_count','=',0)]}" icon="fa-paperclip"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_order_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.attach.icon.order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="message_attachment_count" invisible="1"/>
+                <button name="button_dummy" type="object" string="" attrs="{'invisible':[('message_attachment_count','=',0)]}" icon="fa-paperclip"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

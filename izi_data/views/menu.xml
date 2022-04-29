@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+        <menuitem id="izi_analytic_menu" web_icon="izi_data,static/description/icon.png" name="Analytic" sequence="-1"/>
+        <menuitem id="izi_data_menu" parent="izi_data.izi_analytic_menu" name="Data" sequence="200"/>
+
+        <menuitem id="izi_data_source_menu" parent="izi_data_menu" name="Data Source" sequence="100" action="izi_data_source_action" />
+        <menuitem id="izi_table_menu" parent="izi_data_menu" name="Table" sequence="200" action="izi_table_action" />
+        <menuitem id="izi_analysis_menu" parent="izi_data_menu" name="Analysis" sequence="1000" action="izi_analysis_action" />
+
+  </data>
+</odoo>
